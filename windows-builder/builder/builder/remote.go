@@ -122,6 +122,7 @@ func (r *Remote) copyViaBucket(ctx context.Context, inputPath, outputPath string
 	}
 
 	pwrScript := fmt.Sprintf(`
+$ErrorActionPreference = "Stop"
 $ProgressPreference = 'SilentlyContinue'
 gsutil cp %q c:\workspace.zip
 Expand-Archive -Path c:\workspace.zip -DestinationPath c:\workspace -Force
